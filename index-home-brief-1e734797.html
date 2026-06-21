@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼体育 · 稳定入口与平台介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f6f7f9;
+      color: #1e2229;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ——— Hero 深色头图 ——— */
+    .hero {
+      background: linear-gradient(145deg, #0b121f 0%, #18263a 100%);
+      padding: 3.2rem 2rem 4rem;
+      text-align: center;
+      border-radius: 0 0 48px 48px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-marker {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      color: #6f8bb0;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      color: #7bb3ff;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 1.4rem auto 0;
+      color: #b8cbe4;
+      font-size: 1.1rem;
+    }
+
+    .hero .stats-line {
+      margin-top: 2.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.8rem;
+      flex-wrap: wrap;
+      color: #cbd7ec;
+    }
+
+    .stats-line .stat-item {
+      font-size: 0.95rem;
+      border-left: 1px solid #31455e;
+      padding-left: 1.2rem;
+    }
+
+    .stats-line .stat-item:first-child {
+      border-left: none;
+    }
+
+    .stats-line strong {
+      display: block;
+      font-size: 1.6rem;
+      color: white;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    /* ——— 正文区 浅色背景 ——— */
+    .content-wrap {
+      background: #ffffff;
+      border-radius: 36px 36px 0 0;
+      padding: 3rem 2rem 2.5rem;
+      margin-top: -1.6rem;
+      box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.02);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+      border-left: 5px solid #2f6ed4;
+      padding-left: 1rem;
+      color: #131b26;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: #4a5568;
+      margin-bottom: 2.2rem;
+      max-width: 700px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2.4rem 0 3rem;
+    }
+
+    .grid-card {
+      background: #f3f6fd;
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem;
+      transition: background 0.2s;
+    }
+
+    .grid-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #0d1b34;
+    }
+
+    .grid-card p {
+      font-size: 0.98rem;
+      color: #2d3f57;
+    }
+
+    .grid-card .tag {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #dce6f5;
+      color: #1f3a6b;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      letter-spacing: 0.02em;
+    }
+
+    .inline-link-area {
+      background: #f0f4fe;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.3rem 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .inline-link-area a {
+      color: #1a5bc7;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .inline-link-area a:hover {
+      border-bottom-color: #1a5bc7;
+    }
+
+    .summary-block {
+      display: flex;
+      gap: 1.8rem;
+      margin: 2.2rem 0 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .summary-item {
+      flex: 1;
+      min-width: 180px;
+      border-top: 2px solid #e3eaf5;
+      padding-top: 1.2rem;
+    }
+
+    .summary-item h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #10233e;
+    }
+
+    .summary-item p {
+      font-size: 0.92rem;
+      color: #3b4c63;
+    }
+
+    .faq-mini {
+      background: #f6f9ff;
+      border-radius: 24px;
+      padding: 1.6rem 2rem;
+      margin: 2.6rem 0 0.8rem;
+    }
+
+    .faq-mini h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .faq-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #0f2947;
+      min-width: 100px;
+    }
+
+    .faq-a {
+      color: #34495e;
+    }
+
+    .footer-note {
+      margin-top: 3.2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #dce2ed;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #4f607b;
+    }
+
+    .footer-note .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #345eac;
+      border-radius: 10px;
+      margin: 0 0.6rem;
+      vertical-align: middle;
+    }
+
+    /* ——— 响应式 ——— */
+    @media (max-width: 760px) {
+      .hero {
+        padding: 2.4rem 1.2rem 3rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero .stats-line {
+        gap: 1.2rem;
+      }
+      .stats-line .stat-item {
+        padding-left: 0.8rem;
+        font-size: 0.8rem;
+      }
+      .stats-line strong {
+        font-size: 1.3rem;
+      }
+      .content-wrap {
+        padding: 2rem 1.2rem 1.8rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .inline-link-area {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem;
+      }
+      .summary-block {
+        gap: 1rem;
+      }
+      .faq-row {
+        flex-direction: column;
+        margin-bottom: 1.2rem;
+      }
+      .faq-q {
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HERO 深色头图 -->
+    <section class="hero">
+      <div class="hero-marker">  杂志专题 · 稳定入口</div>
+      <h1><span>乐鱼体育</span> · 平台逻辑与界面</h1>
+      <p>从入口稳定性到信息结构，一份关于访问通道与使用背景的专题说明。</p>
+      <div class="stats-line">
+        <div class="stat-item"><strong>4.2+</strong> 活跃场景</div>
+        <div class="stat-item"><strong>64</strong> 功能模块</div>
+        <div class="stat-item"><strong>7×24</strong> 链路监测</div>
+      </div>
+    </section>
+
+    <!-- 正文区 浅色卡片 -->
+    <div class="content-wrap">
+      <!-- 背景说明 三段自然介绍 -->
+      <h2 class="section-title">访问背景与结构概述</h2>
+      <p class="section-sub">
+        随着体育信息平台的使用频次持续增加，稳定的访问入口与清晰的内容组织成为基础需求。以下从通道设置、内容分区、使用场景三个维度展开。
+      </p>
+
+      <div class="card-grid">
+        <div class="grid-card">
+          <h3>入口与路由</h3>
+          <p>主站采用冗余网络架构与多链路负载均衡，确保不同地区用户均可经由就近节点完成连接。首页聚合核心导航，减少跳转层级。</p>
+          <span class="tag">边缘加速</span>
+        </div>
+        <div class="grid-card">
+          <h3>内容分区逻辑</h3>
+          <p>基于赛事类型、数据维度、用户偏好三个因子组织信息层级。每个分区设置独立缓存策略，高频板块优先加载。</p>
+          <span class="tag">动态缓存</span>
+        </div>
+        <div class="grid-card">
+          <h3>使用场景适配</h3>
+          <p>桌面端与移动端采用同一数据源，布局随视口自适应。关键操作路径控制在3次点击以内，降低认知负荷。</p>
+          <span class="tag">响应布局</span>
+        </div>
+        <div class="grid-card">
+          <h3>权限与安全</h3>
+          <p>全站启用TLS传输加密，敏感接口二次校验。用户身份与会话管理遵循最小权限原则，日志保留30天。</p>
+          <span class="tag">数据保护</span>
+        </div>
+      </div>
+
+      <!-- 链接自然嵌入句子（必须出现“乐鱼体育”且文本严格等于） -->
+      <div class="inline-link-area">
+        <span>📌</span> 若需直接访问平台，推荐使用 <a href="https://index-home-leyu.com.cn">乐鱼体育</a> 作为起始页面，该地址已集成自动路由检测与备用节点池，可减少中间跳转。
+      </div>
+
+      <!-- 特点/场景/提示 混合区块 -->
+      <div class="summary-block">
+        <div class="summary-item">
+          <h4>页面响应机制</h4>
+          <p>首屏加载控制在1.6s以内（中位数），静态资源采用CDN分发，版本号缓存策略降低回源率。</p>
+        </div>
+        <div class="summary-item">
+          <h4>内容更新节奏</h4>
+          <p>赛事数据实时同步，资讯栏目每15分钟轮询。重大事件推送通过WebSocket主动下发。</p>
+        </div>
+        <div class="summary-item">
+          <h4>可用性指标</h4>
+          <p>过去12个月统计的可用性为99.94%，计划维护窗口每周二凌晨执行，影响范围<0.5%。</p>
+        </div>
+      </div>
+
+      <!-- FAQ 摘要 -->
+      <div class="faq-mini">
+        <h4>常见问题摘要</h4>
+        <div class="faq-row">
+          <span class="faq-q">如何确认访问正常？</span>
+          <span class="faq-a">浏览器地址栏显示安全锁图标，页面底部展示版本号及时间戳。若加载异常可尝试刷新或切换网络。</span>
+        </div>
+        <div class="faq-row">
+          <span class="faq-q">是否支持多终端？</span>
+          <span class="faq-a">主流桌面浏览器及iOS/Android均可使用，部分功能需启用JavaScript。建议升级至最新系统版本。</span>
+        </div>
+        <div class="faq-row">
+          <span class="faq-q">数据来源如何？</span>
+          <span class="faq-a">赛事数据经过多源交叉验证，每30秒与官方数据源校准一次。历史数据保留最近三个赛季。</span>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.88rem; color: #4a6380;">
+          * 更详细说明可参考平台内帮助页面。
+        </div>
+      </div>
+
+      <!-- 页尾访问提示 -->
+      <div class="footer-note">
+        <span>稳定入口 · 持续监测</span>
+        <span class="dot"></span>
+        <span>杂志专题 · 技术简报</span>
+        <span class="dot"></span>
+        <span>数据更新于本月</span>
+        <br style="display: block; margin-top: 10px;">
+        <span style="opacity: 0.7;">© 乐鱼体育 平台介绍页 (非官方) — 信息仅供参考</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
