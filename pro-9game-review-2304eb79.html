@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 游戏平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e9edf2;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.01em;
+            color: #0f172a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.95rem;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #0f172a;
+            border-bottom-color: #94a3b8;
+        }
+
+        /* hero 区域 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #0b1b33;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #475569;
+            max-width: 700px;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 核心介绍 */
+        .intro-section {
+            margin-bottom: 2.8rem;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .intro-card h3 {
+            font-weight: 530;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #0b1b33;
+        }
+
+        .intro-card p {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        .intro-card a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .intro-card a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 三个场景模块 — 改用更克制的标题与描述 */
+        .scenes-section {
+            margin-bottom: 2.8rem;
+        }
+
+        .scenes-section h2 {
+            font-weight: 540;
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
+            color: #0f172a;
+        }
+
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.4rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scene-card .scene-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+            color: #3b4a5f;
+        }
+
+        .scene-card h4 {
+            font-weight: 530;
+            font-size: 1.15rem;
+            margin-bottom: 0.65rem;
+            color: #0b1b33;
+        }
+
+        .scene-card p {
+            color: #475569;
+            font-size: 0.93rem;
+            flex: 1;
+        }
+
+        /* 常见说明 / 轻量 FAQ */
+        .faq-section {
+            margin-bottom: 2.8rem;
+        }
+
+        .faq-section h2 {
+            font-weight: 540;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+        }
+
+        .faq-item strong {
+            font-weight: 560;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #0f172a;
+        }
+
+        .faq-item p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .faq-item a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .faq-item a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 尾部 */
+        .footer {
+            text-align: center;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.88rem;
+        }
+
+        .footer a {
+            color: #1e293b;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer a:hover {
+            border-bottom-color: #94a3b8;
+        }
+
+        /* 响应式 */
+        @media (max-width: 800px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .nav {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .card {
+                padding: 1.4rem;
+            }
+
+            .faq-item {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 轻量导航 -->
+    <nav class="nav">
+        <span class="nav-brand">九游·指南</span>
+        <div class="nav-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 简述站点立场 -->
+    <div class="hero">
+        <h1>关于九游 · 值得了解的站点</h1>
+        <p>一个面向游戏相关信息的平台，围绕内容聚合与基础服务展开。下面从几个方面说明其定位与常用场景。</p>
+    </div>
+
+    <!-- 核心介绍：从可信与站点说明角度 -->
+    <section id="intro" class="intro-section">
+        <div class="intro-grid">
+            <div class="card intro-card">
+                <h3>平台背景简述</h3>
+                <p>
+                    <a href="https://pro-9game.com">九游</a> 是一个提供游戏资讯、工具与社区讨论的网站。它并不替代官方渠道，而是以聚合与导航的方式，让用户更容易找到相关资源与信息。站内内容大多由用户与编辑共同维护，保持相对中立的信息呈现。
+                </p>
+            </div>
+            <div class="card intro-card">
+                <h3>可信与透明度</h3>
+                <p>
+                    站点不承诺“独家”或“首发”内容，也不直接提供游戏下载或充值服务。所有链接与推荐均基于客观分类，不保证绝对时效性。建议在使用任何服务前，自行核实来源。九游的维护方在页面底部保留了联系方式，便于沟通与反馈。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三个场景模块：轻量叙述 -->
+    <section id="scenes" class="scenes-section">
+        <h2>常见使用场景</h2>
+        <div class="scenes-grid">
+            <div class="scene-card">
+                <div class="scene-icon">📖</div>
+                <h4>查找游戏资料</h4>
+                <p>玩家在九游可以快速浏览不同游戏的背景介绍、基础攻略和版本更新摘要。站点将这些内容按分类整理，省去在多个平台之间跳转的时间。</p>
+            </div>
+            <div class="scene-card">
+                <div class="scene-icon">💬</div>
+                <h4>社区讨论与反馈</h4>
+                <p>每一个游戏条目下都有对应的讨论区，用户可发布疑问或分享心得。管理组会定期清理无关信息，保持讨论环境的整洁与友好。</p>
+            </div>
+            <div class="scene-card">
+                <div class="scene-icon">🔗</div>
+                <h4>获取相关推荐</h4>
+                <p>根据浏览历史与标签，九游会推荐类似风格或题材的游戏，帮助用户发现潜在感兴趣的作品。推荐逻辑基于分类匹配，不含商业化干预。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见说明 / 轻量 FAQ 摘要 -->
+    <section id="faq" class="faq-section">
+        <h2>常见说明</h2>
+
+        <div class="faq-item">
+            <strong>九游收录哪些类型的内容？</strong>
+            <p>主要以游戏资讯、玩家攻略、更新日志和社区讨论为主。不包含盗版资源、破解工具或违反公序良俗的信息。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>信息多久更新一次？</strong>
+            <p>编辑团队根据游戏版本和社区热点进行不定期更新。大部分热门游戏的资料会保持相对及时，但非实时同步。如发现过时内容，可通过页面反馈渠道告知。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>是否需要注册账号？</strong>
+            <p>浏览公开内容无需注册。若希望参与讨论、收藏或订阅特定游戏，则需要创建账号。注册信息仅用于站点内功能，不会被用于其他用途。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>能否直接跳转到游戏官网？</strong>
+            <p>部分页面提供了外部链接，包括开发商站点或官方公告。这些链接都标注了来源，用户可自行判断是否前往。九游不对第三方网站的内容负责。</p>
+        </div>
+
+        <div class="faq-item" style="border-left: 3px solid #cbd5e1; margin-top: 0.4rem;">
+            <p style="font-size:0.93rem;">若想进一步了解 <a href="https://pro-9game.com">九游</a> 的更多细节，可以访问其首页浏览不同分类，或查看页面底部的「关于我们」说明。</p>
+        </div>
+    </section>
+
+    <!-- 尾部 -->
+    <footer class="footer">
+        <p>© 2025 · 介绍页仅用于展示基本信息，不构成任何推荐或担保。</p>
+        <p style="margin-top:0.3rem;">
+            <a href="https://pro-9game.com">九游</a> · 主页
+        </p>
+    </footer>
+</div>
+</body>
+</html>
